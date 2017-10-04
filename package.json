@@ -1,0 +1,56 @@
+{
+  "name": "express-mongodb-api",
+  "version": "1.0.0",
+  "description": "Kanban demo api",
+  "main": "server.js",
+  "engines": {
+    "npm": "3.10.x",
+    "node": "6.11.1"
+  },
+  "scripts": {
+    "test": "cross-env NODE_ENV=test mocha src/test/board.spec.test.js --timeout 500000 --require babel-core/register || exit 0",
+    "lint": "./node_modules/.bin/eslint ./src || exit 0",
+    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src/server.js",
+    "build": "rimraf dist && copyfiles -f src/public/*.html dist/public && copyfiles -f src/public/uploads/* dist/public/uploads && babel src/ -d dist/ --ignore test/*.test.js",
+    "start": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "cloudinary": "^1.9.0",
+    "config": "^1.25.1",
+    "copyfiles": "^1.2.0",
+    "cors": "^2.8.3",
+    "cross-env": "^4.0.0",
+    "crypto": "0.0.3",
+    "express": "^4.15.2",
+    "express-validator": "^3.2.0",
+    "jsonwebtoken": "^7.4.0",
+    "lodash": "^4.17.4",
+    "mailgun-js": "^0.11.2",
+    "moment": "^2.18.1",
+    "mongoose": "^4.10.8",
+    "morgan": "^1.8.1",
+    "multer": "^1.3.0",
+    "rimraf": "^2.6.1",
+    "socket.io": "^1.7.3",
+    "socketio-jwt": "^4.5.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0",
+    "sass-lint": "^1.10.2"
+  }
+}
