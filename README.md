@@ -1,3 +1,6 @@
-## Kanban Demo React API
+# Kanban Demo React API
 
-Nodejs, Socket.io and MongoDB
+Nodejs, Express, Socket.io, MongoDB, Cloudinary, Mailguun
+
+## Demo
+https://kanban-demo.herokuapp.com/
